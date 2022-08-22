@@ -1,0 +1,20 @@
+
+
+<h1 class="text-center mt-5">New game</h1>
+<h2 class="text-center mt-5"><%= @letters %></h2>
+<h4 class="text-center mt-5">What is the longest word you can find?</h4>
+
+<div class="container">
+  <form action="/score" data-turbo="false">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-lg-6">
+          <input class="form-control" type="text" name="question" placeholder="Type your word">
+        </div>
+        <div class="col-lg-2">
+          <input class="btn btn-primary form-control" type="submit" value="Submit">
+        </div>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input id="token" name="token" type="hidden" value='<%= @letters%>' />
+  </form>
+</div>
